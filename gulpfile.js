@@ -1,5 +1,9 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var minify = require('gulp-minify');
+var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
+
 
 function handleError(err) {
   console.log(err.toString());
