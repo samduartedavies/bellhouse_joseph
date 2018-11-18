@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title><?php echo $title; ?></title>
-		<meta name="description" content="<?php echo $metaDesc; ?>" />
+		<meta name="description" content="<?php echo $description; ?>" />
 		<meta name="keywords" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -17,10 +17,10 @@
 		<script src="/common/js/main.min.js"></script>
 	</head>
 
-<body <?php echo ($bodyClass) ? ' class="' . $bodyClass . '"' : ''; ?>>	
+<body <?php echo $bodyClass ? ' class="' . $bodyClass . '"' : ''; ?>>	
 		
 		<div class="main">
 
-			<?php include($_SERVER['DOCUMENT_ROOT'] . '/common/inc/navigation.php'); ?>
+			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/navigation.php'; ?>
 	
 			<div class="content">

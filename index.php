@@ -1,5 +1,5 @@
 <?php
-include 'common/php/functions.php';
+include 'common/php/config.php';
 
 getPage();
 ?>
