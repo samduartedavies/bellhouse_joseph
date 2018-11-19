@@ -1,4 +1,4 @@
-<div class="navigation">
+<nav class="navigation">
 	<div class="navigation--dropdown">
 		<div class="navigation--dropdown--container">
 			<ul>
@@ -17,4 +17,4 @@
 			</ul>
 		</div>
 	</div>
-</div>
+</nav>

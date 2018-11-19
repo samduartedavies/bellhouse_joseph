@@ -19,7 +19,7 @@
 
 <body <?php echo $bodyClass ? ' class="' . $bodyClass . '"' : ''; ?>>	
 		
-		<div class="main">
+		<div class="page">
 
 			<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/navigation.php'; ?>
 	

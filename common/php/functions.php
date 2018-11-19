@@ -1,10 +1,11 @@
 <?php
+
 function getPage($url = null)
 {
-    include SITE_ROOT . 'pages/' . $url . '.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/pages/' . $url . '.php';
     //Load specified URL or default to current page URL
     if ($url == null) {
-        $url = $_SERVER['REQUEST_URI'];
+        $url = $_SERVER['REQUEST_URI'] . '/';
     }
 
     //Remove Query & fragments
@@ -18,58 +19,55 @@ function getPage($url = null)
 
     //Remove the base directory of the site
     echo 'before ' . $url;
-    $url = preg_replace('/^' . preg_quote(SITE_DIRECTORY, '/') . '/', '', $url);
+    $url = preg_replace(
+        '/^' . preg_quote($_SERVER['REQUEST_URI'], '/') . '/',
+        '',
+        $url
+    );
     echo 'before ' . $url;
-    if (is_file(SITE_ROOT . 'pages/' . $url . '.php')) {
-        include SITE_ROOT . 'pages/' . $url . '.php';
+    if (is_file($_SERVER['DOCUMENT_ROOT'] . 'pages/' . $url . '.php')) {
+        include $_SERVER['DOCUMENT_ROOT'] . 'pages/' . $url . '.php';
         return;
     } else {
         header("HTTP/1.1 404 Not Found");
-        include SITE_ROOT . 'pages/404.php';
+        include $_SERVER['DOCUMENT_ROOT'] . 'pages/404.php';
         return;
     }
-}
-
-function endsWith($str, $needle)
-{
-    $StrLen = strlen($needle);
-    $FullStrEnd = substr($str, strlen($str) - $StrLen);
-    return $FullStrEnd == $needle;
 }
 
 function getHeader($title, $description, $class = "page")
 {
     $bodyClass = ' class="' . $class . '"';
 
-    include SITE_ROOT . 'common/inc/header.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/header.php';
 }
 
 function getFooter()
 {
-    include SITE_ROOT . 'common/inc/footer.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/footer.php';
 }
 
 function getNavigation()
 {
-    include SITE_ROOT . 'common/inc/navigation.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/navigation.php';
 }
 function getSearch($form = null, $is_header = false)
 {
     if (!is_null($form)) {
         $form = '-' . $form;
     }
-    include SITE_ROOT . 'common/inc/search' . $form . '.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/search' . $form . '.php';
 }
 function getForm($form)
 {
-    include SITE_ROOT . 'common/inc/form-' . $form . '.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/form-' . $form . '.php';
 }
 function getTout($tout)
 {
-    include SITE_ROOT . 'common/inc/tout-' . $tout . '.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/tout-' . $tout . '.php';
 }
 function getAboutSubNav()
 {
-    include SITE_ROOT . 'pages/about/about-nav.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/pages/about/about-nav.php';
 }
 ?>

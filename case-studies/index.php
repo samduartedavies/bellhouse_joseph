@@ -8,6 +8,6 @@
     'page-home'
 ); ?>
 
-<h1>homepage</h1>
+<h1>case studies</h1>
 
 <?php getFooter(); ?>
