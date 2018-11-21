@@ -7,7 +7,8 @@
 ',
     'page-home'
 ); ?>
-
-<h1>homepage</h1>
+<div class="page__container">
+  <h1>homepage</h1>
+</div>
 
 <?php getFooter(); ?>
