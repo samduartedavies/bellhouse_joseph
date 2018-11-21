@@ -35,9 +35,16 @@ gulp.task('compress-js', function() {
     .pipe(gulp.dest('common/js/'));
 });
 
-gulp.task('minify-css', () =>
+gulp.task('prepare-css', () =>
   gulp
     .src('common/css/main.css')
+    .pipe(
+      autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false,
+      })
+    )
+    .pipe(gulp.dest('common/css'))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(rename('main.min.css'))
     .pipe(gulp.dest('common/css'))
@@ -57,8 +64,8 @@ gulp.task('browsers', () =>
 
 gulp.task('watch', function() {
   gulp.watch('common/scss/*.{sass,scss}', ['scss']);
-  gulp.watch('common/css/main.css', ['browsers']);
-  gulp.watch('common/css/main.css', ['minify-css']);
+  // gulp.watch('common/css/main.css', ['browsers']);
+  gulp.watch('common/css/main.css', ['prepare-css']);
   gulp.watch('common/js/main.js', ['compress-js']);
 });
 
