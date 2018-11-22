@@ -1,4 +1,8 @@
 .navigation {
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
   &__container {
     @include containerize;
   }
@@ -25,6 +29,7 @@
       height: auto;
     }
     li {
+      position: relative;
       @include breakpoint('phone') {
         width: 100%;
       }
@@ -59,6 +64,15 @@
           }
         }
       }
+      &:hover {
+        .menu__dropdown {
+          display: block;
+        }
+      }
+    }
+    .menu__dropdown {
+      display: none;
+      position: absolute;
     }
   }
 }
