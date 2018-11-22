@@ -17,7 +17,7 @@
 		<script src="/common/js/main.min.js"></script>
 	</head>
 
-<body <?php echo $bodyClass ? ' class="' . $bodyClass . '"' : ''; ?>>
+<body <?php echo $bodyClass; ?>>
 		
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/inc/navigation.php'; ?>
 		<div class="page">

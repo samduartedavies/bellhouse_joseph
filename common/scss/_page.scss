@@ -1,4 +1,6 @@
 .page {
+  padding: 0 auto;
+  margin: 0 auto -50px;
   &__container {
     @include containerize;
   }

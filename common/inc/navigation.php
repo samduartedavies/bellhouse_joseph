@@ -6,7 +6,7 @@
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="/what-we-do">What we do</a>
+        <a href="/case-studies">Case Studies</a>
       </li>
       <li>
         <a href="/about-us">About us</a>

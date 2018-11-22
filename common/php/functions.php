@@ -35,7 +35,7 @@ function getPage($url = null)
     }
 }
 
-function getHeader($title, $description, $class = "page")
+function getHeader($title, $description, $class = "body")
 {
     $bodyClass = ' class="' . $class . '"';
 
