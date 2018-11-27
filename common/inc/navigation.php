@@ -1,6 +1,6 @@
 <nav class="navigation">
   <div class="navigation__container"> 
-    <div class="navigation__dropdown"></div>
+    <div class="navigation__dropdown"><span></span></div>
     <ul class="navigation__menu">
       <li>
         <a href="/">Home</a>
