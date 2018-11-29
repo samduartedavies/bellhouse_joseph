@@ -99,6 +99,7 @@
       height: 3px;
       background: yellow;
       opacity: 1;
+      transition: opacity 0.15s 0.25s ease;
     }
     &:before,
     &:after {
@@ -125,7 +126,7 @@
       &:after {
         transition: top 0.2s ease, transform 0.2s 0.2s ease;
         background: 0.2s ease;
-        top: 0;
+        top: 50%;
       }
       &:after {
         transform: rotate(-45deg);
@@ -135,7 +136,7 @@
       }
       span {
         opacity: 0;
-        transition: opacity 0.25s ease;
+        transition: opacity 0.15s 0.05s ease;
       }
     }
   }
